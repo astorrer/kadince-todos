@@ -15,6 +15,18 @@ function App() {
     }
   }
 
+  function markAsComplete(index) {
+    const newTodos = [...todos];
+    newTodos[index].status = newTodos[index].status === 'completed' ? 'pending' : 'completed';
+    setTodos(newTodos);
+  }
+
+  function deleteTodo(index) {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -26,10 +38,16 @@ function App() {
           </form>
         </div>
         <div>
-          {todos.map((todo, index) => {
-            // Display all todos
-            return <div key={index}>{todo.text} <button>Mark as {todo.status}.</button> </div>;
-          })}
+          <ul>
+            {todos.map((todo, index) => {
+              // Display all todos
+              return (
+                <li key={index}>{todo.text} 
+                <button onClick={() => markAsComplete(index)}>Task is {todo.status}.</button>
+                <button onClick={() => deleteTodo(index)}>Delete</button>
+                </li>);
+            })}
+          </ul>
         </div>
       </header>
     </div>
