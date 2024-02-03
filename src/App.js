@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-
 
 function App() {
   const [todos, setTodos] = useState([]);
