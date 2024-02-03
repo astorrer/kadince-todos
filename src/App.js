@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Todo App</h1>
+        <h1>Kadince Todo App</h1>
         <div>
           <form>
             <input type="text" value={todoInput} onChange={(e) => setTodoInput(e.target.value)} />
@@ -28,7 +28,7 @@ function App() {
         <div>
           {todos.map((todo, index) => {
             // Display all todos
-            return <div key={index}>{todo.text}</div>;
+            return <div key={index}>{todo.text} <button>Mark as {todo.status}.</button> </div>;
           })}
         </div>
       </header>
