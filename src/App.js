@@ -3,9 +3,9 @@ import './App.css';
 
 
 function App() {
-  
-
-
+  const [todos, setTodos] = useState([]);
+  const [todoInput, setTodoInput] = useState('');
+  const [todoStatus, setTodoStatus] = useState('all');
 
   return (
     <div className="App">
