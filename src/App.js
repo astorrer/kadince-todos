@@ -8,8 +8,8 @@ function App() {
   const [todoStatus, setTodoStatus] = useState('all');
 
   function addTodo(event) {
+    event.preventDefault(); // Prevent the page from refreshing
     if (todoInput) {
-      event.preventDefault(); // Prevent the page from refreshing
       setTodos([...todos, { text: todoInput, status: 'pending' }]);
       setTodoInput(''); // Clear the input field
     }
