@@ -25,6 +25,12 @@ function App() {
             <button type="submit" onClick={addTodo}>Add</button>
           </form>
         </div>
+        <div>
+          {todos.map((todo, index) => {
+            // Display all todos
+            return <div key={index}>{todo.text}</div>;
+          })}
+        </div>
       </header>
     </div>
   );  
